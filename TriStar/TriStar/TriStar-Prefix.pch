@@ -1,0 +1,108 @@
+//
+// Prefix header for all source files of the 'TriStar' target in the 'TriStar' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define STATUSBAR_ORIENTATION  [[UIApplication sharedApplication] statusBarOrientation]
+
+// headings
+
+#define IS_EMPTY(x) (x==nil||[x isEqualToString:@""]) // to check empty test field
+
+#import "NSData+Base64.h"
+
+typedef enum {
+    WSI_STATUS_MIN = 0,
+    
+	WSI_STATUS_FAIL,
+	WSI_STATUS_TIMEOUT,
+	WSI_STATUS_NO_NETWORK,
+	WSI_STATUS_NOT_AUTHORISED,
+	WSI_STATUS_SUCCESS,
+    
+	WSI_STATUS_MAX,
+    WSI_STATUS_INVALID = WSI_STATUS_MAX
+} WSI_STATUS;
+
+
+//#ifndef isOFFLINE
+//#import "Reachability.h"
+//#define isOFFLINE  ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable)
+//#endif
+
+
+//STATUS CODE ALERT
+#define STATUS_CODE_FAILED_ERROR        @"Communication failed with server. Please try again"//after getting response if status code !=200
+
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
+#define PURCHESED_ORDER_LIST     @"Purchesed Order List"
+#define GET_PURCHESED_ORDER      @"Purchesed Order"
+#define REPAIL_LIST              @"Repair List"
+#define GET_REPAIR               @"Repair"
+#define CHECK_IN_OR_OUT          @"Check In/ Check Out"
+ // indicator values
+#define WSI_LOADING_TEXT                @"Loading"
+#define REQUEST_TIMEOUT_INTERVAL        500.0
+
+
+//alert messages
+
+#define ALERT_MSG_TITLE                 @"Tri Star"
+#define USER_EMPTY_EMAIL                @"Please enter your username"
+#define USER_EMPTY_PWD                  @"Please enter your password"
+#define DATE_INVALID                    @"Please enter valid date"
+                       
+// wenservice constants
+
+#define WSI_KEY_WS_DATA_MODEL       @"wsDataModel"
+#define LOGIN_TYPE                  @"Login"
+#define FIND_PO_TYPE                @"FindPO"
+#define GET_PO_TYPE                 @"GetPO"
+#define GET_PO_RECEIPT              @"GetPOReceipt"
+#define PO_RECEIPT_ENTRY            @"POReceiptEntry"
+
+#define FIND_RA_TYPE                @"FindRA"
+#define GET_RA_TYPE                 @"GetRA"
+#define RA_UPDATE_BOM               @"UpdateBOM"
+#define RA_PART_CHECKIN             @"PartCheckIn"
+#define RA_PART_CHECKOUT            @"PartCheckOut"
+#define GET_PART_DOCUMENTS          @"GetPartDocuments"
+#define GET_SUBSTITUTE_PARTS        @"GetSubstituteParts"
+#define REPLACE_SUBSTITUTE_PART     @"ReplacePart"
+//#define REPLACE_SUBSTITUTE_PART     @"ReplaceSubstituteParts"
+
+
+
+#define ADJUST_PARTS                @"AdjustParts"
+#define GET_PART                    @"GetPART"
+#define ADD_RA_BOM_PART             @"AddBomPart"
+#define DELETE_BOM_PART             @"DeleteBomPart"
+
+
+#define CHECK_DOCUMENT_ACCESS       @"CHECKDOCSACCESS"
+
+//#define EXTERNAL_IP_ADDRESS         @"49.207.204.116"
+#define EXTERNAL_IP_ADDRESS         @"108.49.151.106"
+
+
+
+
+//urls
+//#define REQ_URL                     @"http://192.168.137.10/TriStarService/Tristarservice.svc/ProcessRequest"
+//#define REQ_URL                     @"http://portal.tristarcnc.com/TriStarServicedev/Tristarservice.svc/ProcessRequest"
+//#define REQ_URL                     @"http://portal.tristarcnc.com/TriStarServicedev/Tristarservice.svc/ProcessRequest"
+//
+//#define REQ_URL                     @"http://portal.tristarcnc.com/TriStarService/Tristarservice.svc/ProcessRequest"
+
+
